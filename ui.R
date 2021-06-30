@@ -2,6 +2,8 @@ library(shiny)
 library(shinythemes)
 library(bsplus)
 
+options(shiny.sanitize.errors = FALSE)
+
 ui<- fluidPage(fluidRow(
   column(3,
          style = "border-radius:8px; background-color: #ededed; border-style:solid; border-color:#b1d1fc; margin: 5px; padding: 10px",
