@@ -72,7 +72,7 @@ VIRTUALENV_NAME = '/home/ubuntu/new_env'
 server<-function(input, output, session) {
   virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
   python_path = Sys.getenv('PYTHON_PATH')
-  virtualenv_dir = 'nlp_trial'
+  # virtualenv_dir = 'nlp_trial'
   reticulate::use_python(python_path)
   
   # Create virtual env and install dependencies
