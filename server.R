@@ -73,7 +73,7 @@ server<-function(input, output, session) {
   reticulate::use_virtualenv('/home/ubuntu/python-environments/nlp_env', required = T)
   
   observeEvent(input$button, {
-  source_python("NLP_Project_2.py")
+  reticulate::source_python("NLP_Project_2.py")
   show_modal_spinner() # show the modal window
   review_to_analyze <- input$review
   analyzed_review_df <- extract_sentiment_analysis(review_to_analyze)
