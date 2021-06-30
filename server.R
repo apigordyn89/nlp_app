@@ -65,12 +65,12 @@ PYTHON_DEPENDENCIES = c('pip','spacy==2.3.2', 'google-cloud-language', 'regex', 
 
 server<-function(input, output, session) {
   virtualenv_dir = 'nlp_trial'
-  reticulate::use_python('/usr/bin/python3')
+  reticulate::use_python('/home/ubuntu/python-environments/nlp_env/bin/python3.7')
   
   # Create virtual env and install dependencies
   #reticulate::virtualenv_create(envname = 'nlp/trial')
   #reticulate::virtualenv_install(virtualenv_dir, packages = PYTHON_DEPENDENCIES, ignore_installed=TRUE)
-  reticulate::use_virtualenv('~/python-environments/env', required = T)
+  reticulate::use_virtualenv('/home/ubuntu/python-environments/nlp_env', required = T)
   
   observeEvent(input$button, {
   source_python("NLP_Project_2.py")
