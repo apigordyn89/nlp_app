@@ -63,14 +63,22 @@ print_analysis <- function(reviews_df, review){
 
 PYTHON_DEPENDENCIES = c('pip','spacy==2.3.2', 'google-cloud-language', 'regex', 'pandas==1.2.4', 'cython==0.29.2', 'neuralcoref==4.0', 'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz')
 
+VIRTUALENV_NAME = '/home/ubuntu/new_env'
+
+  Sys.setenv(PYTHON_PATH = '/usr/bin/python3.7')
+  Sys.setenv(VIRTUALENV_NAME = paste0(VIRTUALENV_NAME, '/')) # include '/' => installs into rstudio-connect/apps/
+  Sys.setenv(RETICULATE_PYTHON = paste0(VIRTUALENV_NAME, '/bin/python'))
+
 server<-function(input, output, session) {
+  virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
+  python_path = Sys.getenv('PYTHON_PATH')
   virtualenv_dir = 'nlp_trial'
-  reticulate::use_python('/usr/bin/python3.7')
+  reticulate::use_python(python_path)
   
   # Create virtual env and install dependencies
   #reticulate::virtualenv_create(envname = 'nlp/trial')
   #reticulate::virtualenv_install(virtualenv_dir, packages = PYTHON_DEPENDENCIES, ignore_installed=TRUE)
-  reticulate::use_virtualenv('/home/ubuntu/python-environments/nlp_env', required = T)
+  reticulate::use_virtualenv(virtualenv_dir, required = T)
   
   observeEvent(input$button, {
   reticulate::source_python("NLP_Project_2.py")
