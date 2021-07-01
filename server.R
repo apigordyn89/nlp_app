@@ -82,7 +82,7 @@ server<-function(input, output, session) {
   
   observeEvent(input$button, {
   reticulate::source_python("NLP_Project_2.py")
-  show_modal_spinner('This might take a little while...') # show the modal window
+  show_modal_spinner(text = 'This might take a little while...') # show the modal window
   review_to_analyze <- input$review
   analyzed_review_df <- extract_sentiment_analysis(review_to_analyze)
   output$value <- renderText({print_analysis(analyzed_review_df, review_to_analyze)})
