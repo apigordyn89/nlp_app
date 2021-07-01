@@ -63,11 +63,11 @@ print_analysis <- function(reviews_df, review){
 
 PYTHON_DEPENDENCIES = c('pip','spacy==2.3.2', 'google-cloud-language', 'regex', 'pandas==1.2.4', 'cython==0.29.2', 'neuralcoref==4.0', 'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz')
 
-VIRTUALENV_NAME = '/home/ubuntu/env_1'
+VIRTUALENV_NAME = '/home/ubuntu/env_2'
 
-  Sys.setenv(PYTHON_PATH = '/usr/bin/python3.7')
+  Sys.setenv(PYTHON_PATH = '/usr/bin/python3.8')
   Sys.setenv(VIRTUALENV_NAME = paste0(VIRTUALENV_NAME, '/')) # include '/' => installs into rstudio-connect/apps/
-  Sys.setenv(RETICULATE_PYTHON = paste0(VIRTUALENV_NAME, '/bin/python3.7'))
+  Sys.setenv(RETICULATE_PYTHON = paste0(VIRTUALENV_NAME, '/bin/python3.8'))
 
 server<-function(input, output, session) {
   virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
