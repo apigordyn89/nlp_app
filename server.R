@@ -1252,8 +1252,8 @@ server<-function(input, output, session) {
   })
   
   observeEvent(input$responseButton, {
-    python_path = '/Users/jgordyn/opt/anaconda3/envs/nlp_new/bin/python3.7'
-    reticulate::use_virtualenv('/Users/jgordyn/opt/anaconda3/envs/nlp_new', required = T)
+    # python_path = '/Users/jgordyn/opt/anaconda3/envs/nlp_new/bin/python3.7'
+    # reticulate::use_virtualenv('/Users/jgordyn/opt/anaconda3/envs/nlp_new', required = T)
     review_response_text <- input$reviewResponse
     if(review_response_text!=''){
       # source_python("response_reviews_2.py")
