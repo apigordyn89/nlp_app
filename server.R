@@ -1261,7 +1261,7 @@ server<-function(input, output, session) {
       updateTextAreaInput(session, 'reviewResponse', 'Response', value = '')
       reviews_df[reviews_df$review==current_review(), 'time_response'] <- as.character(format(now(), '%d-%m-%Y %H:%M:%S'))
       reviews_df[reviews_df$review==current_review(), 'response'] <- review_response_text
-      write.csv(reviews_df, file = 'aspects_reviews_final.csv', row.names = FALSE)
+      # write.csv(reviews_df, file = 'aspects_reviews_final.csv', row.names = FALSE)
       # gcs_global_bucket("tu-vieja-en-recontra-tanga")
       #gcs_upload(reviews_df, name = 'aspects_reviews_final.csv')
       shinyalert(title = "Response submitted", type = "success")
