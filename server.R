@@ -754,26 +754,26 @@ count_reviews <- function(reviews_df, input_polarity, input_aspect, datemin, dat
   return(html_count)
 }
 
-# VIRTUALENV_NAME = '/home/ubuntu/env_2'
+VIRTUALENV_NAME = '/home/ubuntu/env_2'
 
-#Sys.setenv(PYTHON_PATH = '/usr/bin/python3.8')
-#Sys.setenv(VIRTUALENV_NAME = paste0(VIRTUALENV_NAME, '/')) # include '/' => installs into rstudio-connect/apps/
-#Sys.setenv(RETICULATE_PYTHON = paste0(VIRTUALENV_NAME, '/bin/python3.8'))
+Sys.setenv(PYTHON_PATH = '/usr/bin/python3.8')
+Sys.setenv(VIRTUALENV_NAME = paste0(VIRTUALENV_NAME, '/')) # include '/' => installs into rstudio-connect/apps/
+Sys.setenv(RETICULATE_PYTHON = paste0(VIRTUALENV_NAME, '/bin/python3.8'))
 
 server<-function(input, output, session) {
   
-  # virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
-  # python_path = Sys.getenv('PYTHON_PATH')
+  virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
+  python_path = Sys.getenv('PYTHON_PATH')
   # virtualenv_dir = 'nlp_trial'
-  # reticulate::use_python(python_path)
-  reticulate::use_python('/Users/jgordyn/opt/anaconda3/python3.7')
-  reticulate::use_virtualenv('/Users/jgordyn/opt/anaconda3/envs/nlp_new', required = T)
+  reticulate::use_python(python_path)
+  # reticulate::use_python('/Users/jgordyn/opt/anaconda3/python3.7')
+  # reticulate::use_virtualenv('/Users/jgordyn/opt/anaconda3/envs/nlp_new', required = T)
   
   
   # Create virtual env and install dependencies
-  #reticulate::virtualenv_create(envname = 'nlp/trial')
-  #reticulate::virtualenv_install(virtualenv_dir, packages = PYTHON_DEPENDENCIES, ignore_installed=TRUE)
-  # reticulate::use_virtualenv(virtualenv_dir, required = T)
+  # reticulate::virtualenv_create(envname = 'nlp/trial')
+  # reticulate::virtualenv_install(virtualenv_dir, packages = PYTHON_DEPENDENCIES, ignore_installed=TRUE)
+  reticulate::use_virtualenv(virtualenv_dir, required = T)
   
   observeEvent(input$button_rev_ex, {
     if (input$review_2 != '') {
