@@ -66,7 +66,7 @@ colour_multiple_aspects_2 <- function(reviews_df, reviews_string, recursive_revi
 print_analysis_2 <- function(reviews_df, review){
   if(reviews_df == 'No matches.'){
     
-    return(paste('<div style = "border-radius:8px; background-color: #ededed; border-style:solid; border-color:#b1d1fc;"><div style = "margin: 5px; padding: 12px">', '<b>ANALYSIS RESULT</b></br></br>', reviews_df, '</div></div></br></br><button class="btn action-button" type="button" id="button_to_dashboard" style="position: absolute; right: 0; border-radius: 8px; color: black; background-color: #e7e7e7; border: 2px solid #b1d1fc">Go to Dashboard</button>', sep =''))
+    return(paste('<div style = "border-radius:8px; background-color: #ededed; border-style:solid; border-color:#b1d1fc;"><div style = "margin: 5px; padding: 12px">', '<b>ANALYSIS RESULT</b></br></br>', reviews_df, '</div></div></br></br><button class="btn action-button" type="button" id="button_to_dashboard" style="position: absolute; right: 0; border-radius: 8px; color: black; background-color: #e7e7e7; border: 2px solid #b1d1fc">Go to Dashboard</button></br></br>', sep =''))
   }
   else{
     reviews_extracts <- c()
@@ -77,7 +77,7 @@ print_analysis_2 <- function(reviews_df, review){
     }
     
     reviews_body <- colour_multiple_aspects_2(reviews_df, '', review, reviews_extracts, 1)
-    return(paste('<div style = "border-radius:8px; background-color: #ededed; border-style:solid; border-color:#b1d1fc;"><div style = "margin: 5px; padding: 12px">', '<b>ANALYSIS RESULT</b></br></br>', reviews_body, '</br></br><p style="color:green">Positive Aspects: <b>', return_aspect_polarity_2(reviews_df, 'Positive') , '</b></br><p style="color:red">Negative Aspects: <b>', return_aspect_polarity_2(reviews_df, 'Negative') , '</b></b></p></div></div></br></br><button class="btn action-button" type="button" id="button_to_dashboard" style="position: absolute; right: 0; border-radius: 8px; color: black; background-color: #e7e7e7; border: 2px solid #b1d1fc">Go to Dashboard</button>' ,sep =''))
+    return(paste('<div style = "border-radius:8px; background-color: #ededed; border-style:solid; border-color:#b1d1fc;"><div style = "margin: 5px; padding: 12px">', '<b>ANALYSIS RESULT</b></br></br>', reviews_body, '</br></br><p style="color:green">Positive Aspects: <b>', return_aspect_polarity_2(reviews_df, 'Positive') , '</b></br><p style="color:red">Negative Aspects: <b>', return_aspect_polarity_2(reviews_df, 'Negative') , '</b></b></p></div></div></br></br><button class="btn action-button" type="button" id="button_to_dashboard" style="position: absolute; right: 0; border-radius: 8px; color: black; background-color: #e7e7e7; border: 2px solid #b1d1fc">Go to Dashboard</button></br></br>' ,sep =''))
     
   }}
 
