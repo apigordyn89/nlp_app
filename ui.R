@@ -17,7 +17,7 @@ reviews_df$date<- as.character(reviews_df$date)
 
 # defining the user interface
 ui<- fluidPage(
-      tabsetPanel(id ='displayedTab',
+      navbarPage("WhatUThinkin'",id ='displayedTab',
                   tabPanel("Introduction", value = 'introPanel',
                            titlePanel("WhatUThinkin' Demo App"),
                            # sidebarLayout will contain student's data
