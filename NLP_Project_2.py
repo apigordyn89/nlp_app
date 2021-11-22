@@ -248,12 +248,3 @@ def extract_sentiment_analysis(text):
     except:
         return 'No matches.'
 
-
-# tuvieja = extract_sentiment_analysis("""""")
-# print(tuvieja)
-# for i in range(0, len(tuvieja)):
-    # print('original:', tuvieja.loc[i, 'extract_original'], tuvieja.loc[i, 'aspect'])
-    # print('coref:', tuvieja.loc[i, 'extract_coref'])
-
-# print(cython.__version__)
-
