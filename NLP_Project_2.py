@@ -7,7 +7,7 @@ import regex as re
 from spacy.matcher import Matcher
 import pandas as pd
 
-client = language_v1.LanguageServiceClient.from_service_account_file('API01-e2eb0b73f5c2.json')
+client = language_v1.LanguageServiceClient.from_service_account_file('file.json')
 neuralcoref.add_to_pipe(nlp)
 
 def coreference(text):
